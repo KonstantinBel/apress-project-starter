@@ -1,7 +1,8 @@
 # Скрипт для запуска/перезапуска проектов Абак-пресс
 
-В PROJECT_PATH необходимо прописать абсолютный путь к папке с проектами.
-Файл скрипта abak_projects сделать исполняемым.
+- В PROJECT_PATH необходимо прописать абсолютный путь к папке с проектами.
+- Файл скрипта abak_projects сделать исполняемым.
+- Сделать скрипт доступным из любых директорий: `echo PATH=$PATH:/path/to/dir/apress-project-starter >> ~/.bashrc`
 
 `abak_projects $action $project $target`
 
@@ -24,9 +25,6 @@
      - pc - pulscen
 
 ## Пример запуска (можно выполнять из любой директории):
-Полный перезапуск Близко с установкой гемов - `abak_porojects.sh reset bz`
-Запуск Космос для Близко - `abak_porojects.sh start cs bz`
-Отлаживаем Близку - `abak_porojects.sh debug bz`
-
-**Сделать скрипт доступным из любых мест:**
-```echo PATH=$PATH:/path/to/dir/apress-project-starter >> ~/.bashrc```
+- Полный перезапуск Близко с установкой гемов - `abak_porojects.sh reset bz`
+- Запуск Космос для Близко - `abak_porojects.sh start cs bz`
+- Отлаживаем Близку - `abak_porojects.sh debug bz`
