@@ -25,6 +25,6 @@
      - pc - pulscen
 
 ## Пример запуска (можно выполнять из любой директории):
-- Полный перезапуск Близко с установкой гемов - `abak_porojects.sh reset bz`
-- Запуск Космос для Близко - `abak_porojects.sh start cs bz`
-- Отлаживаем Близку - `abak_porojects.sh debug bz`
+- Полный перезапуск Близко с установкой гемов - `abak_projects.sh reset bz`
+- Запуск Космос для Близко - `abak_projects.sh start cs bz`
+- Отлаживаем Близку - `abak_projects.sh debug bz`
