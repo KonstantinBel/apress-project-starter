@@ -8,12 +8,16 @@
 #      - restart - остановит сервер, поднимет resque и зпустит dip rails s
 #      - reset - остановит сервер, установит гемы, сделает миграции, обновит npm пакеджи
 #      - down - останавливает все проекты
+#      - debug - подключаемя к контейнеру приложения
+#      - debug_front - смотрим логи вебпака
 # 
 # Пример запуска (можно выполнять из любой директории):
+#
 # Полный перезапуск Близко с установкой гемов - abak_porojects.sh reset bz 
-# Запуск Космос для Близко - abak_porojects.sh start cs bz 
+# Запуск Космос для Близко - abak_porojects.sh start cs bz
+# Отлаживаем Близку - abak_porojects.sh debug bz
 
-ACTION=${1:-'start'}       # action (start, restart, reset, down)
+ACTION=${1:-'start'}       # action (start, restart, reset, down, debug, debug_front)
 PROJECT=${2:-'bz'}         # project (bz - blizko, pc - pulscen, dk, cs - cosmos)
 TARGET=${3:-'bz'}          # cosmos target (bz - blizko, pc - pulscen, dk, cs - cosmos)
 PROJECT_PATH="/home/bartzlo/abak_porojects"
@@ -93,6 +97,12 @@ case "$ACTION" in
           fi
 
           dip rails s
+     ;;
+     "debug")
+          docker attach "${projectName}development_${projectName}-web_1"
+     ;;
+     "debug_front")
+          dip compose logs -f "${projectName}-webpack"
      ;;
      *)
           echo "comand '$ACTION' not found"
