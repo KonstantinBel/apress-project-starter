@@ -12,3 +12,6 @@
 ## Пример запуска (можно выполнять из любой директории):
 Полный перезапуск Близко с установкой гемов - `abak_porojects.sh reset bz`
 Запуск Космос для Близко - `abak_porojects.sh start cs bz`
+
+**Сделать скрипт доступным из любых мест:**
+```echo PATH=$PATH:/path/to/dir/apress-project-starter >> ~/.bashrc```
