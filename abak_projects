@@ -54,7 +54,7 @@ then
      export DOCKER_TLD="test"
 fi
 
-if [ "$projectName" = "cs" ]
+if [ "$projectName" = "cosmos" ]
 then
      cosmosProject="${PROJECTS[$TARGET]}"
      if [ -z "$cosmosProject" ]
