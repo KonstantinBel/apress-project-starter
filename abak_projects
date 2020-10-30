@@ -13,14 +13,14 @@
 # 
 # Пример запуска (можно выполнять из любой директории):
 #
-# Полный перезапуск Близко с установкой гемов - abak_porojects.sh reset bz 
-# Запуск Космос для Близко - abak_porojects.sh start cs bz
-# Отлаживаем Близку - abak_porojects.sh debug bz
+# Полный перезапуск Близко с установкой гемов - abak_projects.sh reset bz 
+# Запуск Космос для Близко - abak_projects.sh start cs bz
+# Отлаживаем Близку - abak_projects.sh debug bz
 
 ACTION=${1:-'start'}       # action (start, restart, reset, down, debug, debug_front)
 PROJECT=${2:-'bz'}         # project (bz - blizko, pc - pulscen, dk, cs - cosmos)
 TARGET=${3:-'bz'}          # cosmos target (bz - blizko, pc - pulscen, dk, cs - cosmos)
-PROJECT_PATH="/home/bartzlo/abak_porojects"
+PROJECT_PATH="/home/bartzlo/abak_projects"
 
 # Available projects
 declare -A PROJECTS
@@ -35,7 +35,7 @@ then
      sleep 0.5s
 
      for projectName in "${PROJECTS[@]}"; do
-          cd "/home/bartzlo/abak_porojects/$projectName"
+          cd "/home/bartzlo/abak_projects/$projectName"
           dip compose down
      done
      exit 0
