@@ -2,7 +2,7 @@
 #
 # В PROJECT_PATH необходимо прописать абсолютный путь к папке с проектами.
 # В секции "Available projects" перечислены доступные проекты.
-# 
+#
 # Доступные действия:
 #      - start - просто запустит dip rails s
 #      - restart - остановит сервер, поднимет resque и зпустит dip rails s
@@ -10,10 +10,10 @@
 #      - down - останавливает все проекты
 #      - debug - подключаемя к контейнеру приложения
 #      - debug_front - смотрим логи вебпака
-# 
+#
 # Пример запуска (можно выполнять из любой директории):
 #
-# Полный перезапуск Близко с установкой гемов - abak_projects.sh reset bz 
+# Полный перезапуск Близко с установкой гемов - abak_projects.sh reset bz
 # Запуск Космос для Близко - abak_projects.sh start cs bz
 # Отлаживаем Близку - abak_projects.sh debug bz
 
@@ -88,12 +88,12 @@ case "$ACTION" in
           dip bundle install
           dip rake db:migrate
           dip compose up -d "$projectName"-resque
-          
+
           if [ "$projectName" != "dk" ]
           then
-               dip package.json:compile
                dip yarn install
                dip yarn run linklocal
+               dip bundle_apress_gems
           fi
 
           dip rails s
